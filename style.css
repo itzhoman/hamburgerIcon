@@ -1,0 +1,96 @@
+
+html{
+  background-color: #d1dded;
+}
+
+.menu-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Navigation styling */
+.menu-navigation {
+  width: 8rem;
+  height: 8rem;
+  background-color: #282831;
+  position: absolute;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.7);
+  animation: morphingAnimation 7s linear infinite;
+}
+
+/* Animation for the navigation's background shape */
+@keyframes morphingAnimation {
+  0%, 100% {
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+  }
+  14% {
+    border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%;
+  }
+  28% {
+    border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%;
+  }
+  42% {
+    border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%;
+  }
+  56% {
+    border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%;
+  }
+  70% {
+    border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%;
+  }
+  84% {
+    border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;
+  }
+}
+
+/* Hamburger icon */
+.hamburger-icon {
+  width: 3.5rem;
+  height: 2rem;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Hamburger bars */
+.bar {
+  width: 3.5rem;
+  height: .2rem;
+  background-color: #caa500;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.bar-top {
+  top: 0;
+}
+
+.bar-middle {
+  top: .9rem;
+  left: .7rem;
+  width: 60%;
+  transition: opacity 0.3s ease;
+}
+
+.bar-bottom {
+  top: 1.8rem;
+}
+
+/* Changes when menu is open */
+.menu-open .bar-top {
+  top: .9rem;
+  transform: rotate(45deg);
+}
+
+.menu-open .bar-middle {
+  opacity: 0;
+}
+
+.menu-open .bar-bottom {
+  top: .9rem;
+  transform: rotate(-45deg);
+}
